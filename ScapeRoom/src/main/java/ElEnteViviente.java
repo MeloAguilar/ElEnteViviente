@@ -14,37 +14,38 @@ public class ElEnteViviente {
         System.out.println("-¿Qué haría Josh aquí?");
         String eleccionEntrada;
         boolean pistola = false, linterna = false, llavePequeña = false,
-                llaveEscalera = false, adrenalina = false, llavesCoche = false, salvarAmigo = false, escapar = false;
+                llaveEscalera = false, pastillaCordura = false, llavesCoche = false, salvarAmigo = false, escapar = false;
         int habitacion = 0;
         Scanner sc = new Scanner(System.in);
-        int intentos = 10, cordura = 100;
+        int pilasLinterna = 10, cordura = 100;
         //Comenzaremos el juego con una pequeña introduccion
         System.out.println("INICIO DEL JUEGO");
         System.out.println("Entras en la casa forzando la puerta y esta se cierra de un portazo tras de tí. \n" +
                 "No hay manera de abrirla de nuevo para salir y solo tienes tres opciones: \n" +
-                "Ir al salón [salon], ir a la puerta que da a la segunda plana[escaleras], o entrar en el garaje [garaje]");
+                "Ir al salón, ir a la puerta que da a la segunda plana, o entrar en el garaje");
         //Mientras se cumplan las condiciones volveremos a la entrada automaticamente
-        while (intentos > 0 && cordura > 0) {
+        while (pilasLinterna > 0 && cordura > 0) {
 
             System.out.println("¿Dónde quieres ir? \n" +
-                    "[salon]  [garaje]  [escaleras]");
+                    "[salon]  [garaje]  [escaleras]\n" +
+                    "Inventario [cosas]");
             eleccionEntrada = sc.nextLine();
             eleccionEntrada.toCharArray();
-//Aquí encontraremos el inventario
+            //Aquí encontraremos el inventario
             if (eleccionEntrada.equals("cosas")) {
-                System.out.println("pilas: " + intentos);
+                System.out.println("pilas: " + pilasLinterna);
                 System.out.println("cordura: " + cordura);
                 if (linterna == true) {
                     System.out.println("linterna");
-                    if (pistola == true) {
-                        System.out.println("pistola");
-                        if (llavePequeña == true) {
-                            System.out.println("llave pequeña");
-                            if (llaveEscalera == true) {
-                                System.out.println("llave escalera");
-                                if (llavesCoche == true) {
-                                    System.out.println("llave coche");
-                                    if (adrenalina == true) {
+                    if (llavesCoche == true) {
+                        System.out.println("llave coche");
+                        if (llaveEscalera == true) {
+                            System.out.println("llave escalera");
+                            if (llavePequeña == true) {
+                                System.out.println("llave pequeña");
+                                if (pistola == true) {
+                                    System.out.println("pistola");
+                                    if (pastillaCordura == true) {
                                         char usarAdrenalina;
                                         System.out.println("adrenalina");
                                         System.out.println("¿usar?");
@@ -52,9 +53,10 @@ public class ElEnteViviente {
                                         switch (usarAdrenalina) {
                                             case 's':
                                                 if (cordura < 80) {
-                                                    intentos--;
+                                                    pilasLinterna--;
                                                     cordura = 100;
                                                     System.out.println("Recuperaste la cordura al máximo");
+                                                    pastillaCordura = false;
                                                 } else {
                                                     System.out.println("En realidad no creo que lo necesite ahora");
                                                 }
@@ -62,40 +64,82 @@ public class ElEnteViviente {
                                             case 'n':
                                                 System.out.println("Sí, en verdad debería dejarlo para cuando lo necesite");
                                                 break;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            } else {
-
+                                        }//Fin_SwitchAdrenalina
+                                    }//Fin_ifAdrenalina
+                                }//Fin_ifPistola
+                            }//Fin_ifLlavePequeña
+                        }//Fin_ifLlaveEscalera
+                    }//Fin_ifLlavesCoche
+                }//Fin_ifLinterna
+            }//Fin_Inventario
+            else {
+                //Las escaleras estarán cerradas hasta que encontremos la llave Escaleras(coche)
                 switch (eleccionEntrada) {
-                    //Las escaleras estarán cerradas hasta que encontremos la llave(coche)
                     case "escaleras":
                         if (!llaveEscalera) {
                             System.out.println("La puerta esta cerrada \n " +
                                     "vuelves a la entrada \n" +
                                     "[salon]  [garaje]  [escaleras]  [cosas]");
-                            intentos--;
-                            //Cuando consigamos la llave de la escalera podremos subir a la segunda planta
+                            pilasLinterna--;
+                            //Cuando consigamos la llave Escalera podremos subir a la segunda planta
                         } else if (llaveEscalera) {
 
                             //Elegiremos entre las cuatro habitaciones y volveremos atrás cuando terminemos los acertijos de cada una
                             //Cuando sepamos donde está Josh podremos decidir como salir de la casa
                             System.out.println("Se abre la puerta y subes a la segunda planta");
-                            System.out.println("Hay cuatro habitaciones, la primera de la derecha esta totalmente a oscuras[1]\n" +
-                                    "la segunda [2] tiene una luz tenue, al final del descansillo, justo en frente, tienes \n" +
-                                    "otra habitación con la luz apagada [3] y a tu izquierda hay una puerta sellada \n" +
-                                    "con un tablón de madera [4] ");
+                            System.out.println("Hay cuatro habitaciones, la primera de la derecha esta totalmente a oscuras\n" +
+                                    "la segunda tiene una luz tenue, al final del descansillo, justo en frente, tienes \n" +
+                                    "otra habitación con la luz apagada y a tu izquierda hay una puerta sellada \n" +
+                                    "con un tablón de madera ");
                             while (!escapar) {
-                                int descansillo;
-                                System.out.println("Habitaciones[1]  [2]  [3]  [4] \n" +
-                                        "Inventario [0]");
-                                descansillo = sc.nextInt();
+                                String descansillo;
+                                System.out.println("Habitaciones[derecha1]  [derecha2]  [delante]  [izquierda] \n" +
+                                        "Inventario [cosas]");
+                                descansillo = sc.nextLine();
+                                descansillo.toCharArray();
+                                if (descansillo.equals("cosas")) {
+                                    System.out.println("pilas: " + pilasLinterna);
+                                    System.out.println("cordura: " + cordura);
+                                    if (linterna == true) {
+                                        System.out.println("linterna");
+                                    }
+                                    if (llavesCoche == true) {
+                                        System.out.println("llave coche");
+                                    }
+                                    if (llaveEscalera == true) {
+                                        System.out.println("llave escalera");
+                                    }
+                                    if (llavePequeña == true) {
+                                        System.out.println("llave pequeña");
+                                    }
+                                    if (pistola == true) {
+                                        System.out.println("pistola");
+                                    }
+                                    if (pastillaCordura == true) {
+                                        char usarAdrenalina;
+                                        System.out.println("adrenalina");
+                                        System.out.println("¿usar?");
+                                        usarAdrenalina = sc.nextLine().charAt(0);
+                                        switch (usarAdrenalina) {
+                                            case 's':
+                                                if (cordura < 80) {
+                                                    pilasLinterna--;
+                                                    cordura = 100;
+                                                    System.out.println("Recuperaste la cordura al máximo");
+                                                    pastillaCordura = false;
+                                                } else {
+                                                    System.out.println("En realidad no creo que lo necesite ahora");
+                                                }
+                                                break;
+                                            case 'n':
+                                                System.out.println("Sí, en verdad debería dejarlo para cuando lo necesite");
+                                                break;
+                                        }//Fin_Switch_ChutarseAdrenalina
+                                    }//Fin_ifChutarseAdrenalina
+                                }//SEGUNDA PLANTA
                                 switch (descansillo) {
-                                    case 1:
+
+                                    case "derecha1":
                                         char hab1;
                                         System.out.println("Al entrar en la habitación ves una jeringa de adrenalina \n" +
                                                 " que resplandece dentro de un armario roto \n" +
@@ -104,8 +148,8 @@ public class ElEnteViviente {
                                         hab1 = sc.next().charAt(0);
                                         switch (hab1) {
                                             case 's':
-                                                intentos--;
-                                                adrenalina = true;
+                                                pilasLinterna--;
+                                                pastillaCordura = true;
                                                 if (linterna) {
                                                     System.out.println("Conseguiste una jeringa de adrenalina");
                                                 } else {
@@ -116,14 +160,14 @@ public class ElEnteViviente {
                                                 }
                                                 break;
                                             case 'n':
-                                                intentos--;
+                                                pilasLinterna--;
                                                 System.out.println("Es verdad... mejor no jugarsela...");
                                                 break;
                                             default:
                                                 throw new IllegalStateException("Unexpected value: " + hab1);
                                         }
                                         break;
-                                    case 2:
+                                    case "derecha2":
                                         System.out.println("Parece que esta es la única habitación iluminada... \n" +
                                                 "Parece que hay un libro... \n" +
                                                 "Pesa demasiado para no tener rebordes de metal...\n" +
@@ -134,28 +178,34 @@ public class ElEnteViviente {
                                         intentoLibro = sc.nextInt();
                                         if (intentoLibro == numeroLibro) {
                                             System.out.println("Abres el libro y dentro encuentras una llave pequeña \n" +
-                                                    "....¿Para qué servirá?... \n" +
+                                                    "con una cadena liada a una pistola ensangrentada...\n" +
+                                                    "...Aunque la sangre esta muy seca..." +
+                                                    "....¿Para qué servirá la llave?... \n" +
                                                     "Coges la llave y vuelves al descansillo");
-                                            intentos--;
+                                            pilasLinterna--;
                                             llavePequeña = true;
+                                            pistola = true;
                                         } else {
                                             System.out.println("El libro no se abre... Probaré con otro código");
-                                            intentos--;
+                                            pilasLinterna--;
                                         }
                                         break;
+                                    case "delante":
+
 
                                 }
                             }
                         }
 
                         break;
+                    //GARAJE
                 /*Tendremos que entrar al garaje para encontrar las llaves del coche en la taquilla y la llave de la
                    segunda planta, cuando lo consigamos volveremos a la entrada
                  */
                     case "garaje":
                         String eleccionGaraje1, eleccionGaraje2;
 
-                        while (!llaveEscalera && intentos > 0 && cordura > 0) {
+                        while (!llaveEscalera && pilasLinterna > 0 && cordura > 0) {
                             System.out.println("Entras y ves el coche y unas taquillas que están bastante alejadas \n" +
                                     "de la puerta, totalmente sumidas en la oscuridad \n" +
                                     ",¿Quieres acercarte a las taquillas o prefieres investigar el coche?\n" +
@@ -167,7 +217,6 @@ public class ElEnteViviente {
                                     if (!llavesCoche) {
                                         System.out.println("El coche está cerrado con llave \n" +
                                                 "Parece que hay un numero escrito con baho en la ventanilla [3]");
-                                        intentos--;
                                     } else if (llavesCoche) {
                                         System.out.println("Coges las llaves de la escalera");
                                         llaveEscalera = true;
@@ -186,12 +235,12 @@ public class ElEnteViviente {
                                             if (!linterna) {
                                                 System.out.println("Has muerto... Recuerda que los entes temen la luz");
                                                 cordura -= 100;
-                                                intentos--;
+                                                pilasLinterna--;
                                             } else if (linterna) {
                                                 System.out.println("El ente sale disparado y te atraviesa...\n" +
                                                         " pierdes 25 puntos de cordura");
                                                 cordura -= 25;
-                                                intentos--;
+                                                pilasLinterna--;
                                                 System.out.println(cordura);
                                             }
                                             break;
@@ -203,13 +252,13 @@ public class ElEnteViviente {
                                                         "Te recompones y coges la llave del coche de dentro de la taquilla");
                                                 cordura -= 90;
                                                 llavesCoche = true;
-                                                intentos -= 1;
                                                 System.out.println(cordura);
+                                                pilasLinterna--;
                                             } else if (linterna) {
                                                 System.out.println("Has encontrado las llaves del coche dentro de la taquilla \n" +
                                                         "mmmm... Parece que hay un numero escrito en la puerta [9]");
                                                 llavesCoche = true;
-                                                intentos -= 1;
+                                                pilasLinterna--;
                                             }
                                             break;
 
@@ -224,7 +273,7 @@ public class ElEnteViviente {
                     //Un pequeño acertijo mediante numeros escritos en los cuadros
                     //Si se acierta el acertijo se abre una caja fuerte
                     case "salon":
-                        intentos--;
+                        pilasLinterna--;
                         System.out.println("Entras al salón y ves tres cuadros, te acercas y ves tres cuadros, en uno pone \n" +
                                 "(1995), en el del centro (+17590), en el tercero (-10000)");
                         System.out.println("Hay una caja fuerte tras el cuadro central\n" +
@@ -233,9 +282,8 @@ public class ElEnteViviente {
                         contraseña = sc.nextInt();
                         //Si aciertas el número secreto te darán la linterna, algo bastante preciado en este juego
                         //La linterna e el método de este juego para contabilizar las acciones
-                        //Sin la linterna el jugador no puede sobrevivir mas de 5 acciones
+                        //Sin la linterna el jugador no puede sobrevivir mas de 3 acciones
                         while (contraseña != numeroSecreto) {
-                            intentos--;
                             System.out.println("Intentalo de nuevo");
                             contraseña = sc.nextInt();
                         }
@@ -243,15 +291,15 @@ public class ElEnteViviente {
                                 "Coges la linterna");
                         System.out.println("Hay  algo escrito en el fondo... Parece un numero [7]");
                         linterna = true;
-                        intentos--;
+                        pilasLinterna--;
                         break;
 
                 }
-                System.out.println("Pulsa Enter");
+                continue;
             }
-        }
-    }
-}
+        }//fin_While de inicio
+    }//Fin_Main
+}//Fin_PublicClass
 
 
 
