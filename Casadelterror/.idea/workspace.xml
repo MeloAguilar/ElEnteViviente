@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="24e17f5e-77ac-4eea-a50a-4d75aaa402c6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:\Windows\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1knXcXAGgEK15wjZzPw9wXtReow" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Entrada" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Entrada" />
+      <module name="La casa del terror." />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Entrada" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="24e17f5e-77ac-4eea-a50a-4d75aaa402c6" name="Default Changelist" comment="" />
+      <created>1606337413550</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606337413550</updated>
+      <workItem from="1606337414827" duration="14727000" />
+      <workItem from="1606378699811" duration="75000" />
+      <workItem from="1606384620989" duration="7344000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="647" y="397" key="#com.intellij.refactoring.replaceConstructorWithFactory.ReplaceConstructorWithFactoryDialog" timestamp="1606337735707">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="647" y="397" key="#com.intellij.refactoring.replaceConstructorWithFactory.ReplaceConstructorWithFactoryDialog/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1606337735707" />
+    <state width="1493" height="362" key="GridCell.Tab.0.bottom" timestamp="1606392061148">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="156" key="GridCell.Tab.0.bottom/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1606344751863" />
+    <state width="1493" height="362" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606392061148" />
+    <state width="1493" height="362" key="GridCell.Tab.0.center" timestamp="1606392061147">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="156" key="GridCell.Tab.0.center/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1606344751863" />
+    <state width="1493" height="362" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1606392061147" />
+    <state width="1493" height="362" key="GridCell.Tab.0.left" timestamp="1606392061147">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="156" key="GridCell.Tab.0.left/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1606344751863" />
+    <state width="1493" height="362" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1606392061147" />
+    <state width="1493" height="362" key="GridCell.Tab.0.right" timestamp="1606392061147">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="156" key="GridCell.Tab.0.right/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1606344751863" />
+    <state width="1493" height="362" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1606392061147" />
+    <state x="591" y="22" key="new project wizard" timestamp="1606378839378">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="591" y="22" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1606378839378" />
+    <state x="425" y="197" key="run.anything.popup" timestamp="1606390919171">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1606343990386" />
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1606390919171" />
+  </component>
+</project>
