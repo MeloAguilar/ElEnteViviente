@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="La casa del terror.:war">
+    <output-path>$PROJECT_DIR$/../La casa del terror/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>La casa del terror.</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="LaCasaDelTerror-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="La casa del terror.:war exploded" />
+    </root>
+  </artifact>
+</component>
